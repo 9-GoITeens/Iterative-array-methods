@@ -7,9 +7,11 @@
  */
 
 const numbers = [1, 9, 6, 2, 3];
-// console.log('numbers', numbers);
+// numbers.sort();
+console.log('numbers', numbers);
 
 const letters = ['b', 'B', 'a', 'A'];
+letters.sort();
 // console.log('letters', letters);
 
 /*
@@ -20,17 +22,21 @@ const letters = ['b', 'B', 'a', 'A'];
  *  - якщо compareFunction(A, B) повертає 0, сортуванння залишить A і B незміннними
  *  по відношенню один до одного, але відсортує їх по відношенню до усіх іншим елементів.
  */
+// numbers.sort((currentEl, nextEl) => {
+//   // return currentEl - nextEl;
+//   return nextEl - currentEl;
+// });
 
+// console.log('numbers', numbers);
 /*
  * Як зробити копію масива щоб не сортувати оригинальний
  * - Array.prototype.slice()
  * - Операція spread
  */
-
-// const descSortedNumbers
-// const ascSortedNumbers
-// console.log('descSortedNumbers', descSortedNumbers);
-// console.log('ascSortedNumbers', ascSortedNumbers);
+const copy = [...numbers].sort((a, b) => b - a);
+// copy.sort();
+console.log('copy', copy);
+console.log('numbers', numbers);
 
 /*
  * Кастомне сортування складних типів
@@ -45,5 +51,7 @@ const players = [
 
 // По ігровому часу
 
-// const sortedByBestPlayers
-// console.table(sortedByBestPlayers);
+const sortedByBestPlayers = [...players].sort(
+  (a, b) => b.timePlayed - a.timePlayed,
+);
+console.table(sortedByBestPlayers);

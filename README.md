@@ -7,3 +7,4 @@
 - find
 - every и some
 - reduce
+- sort
